@@ -1,0 +1,404 @@
+Warning: No PCF file specified; IO pins will be placed automatically
+
+Info: Packing constants..
+Info: Packing IOs..
+Info: Packing LUT-FFs..
+Info:     1494 LCs used as LUT4 only
+Info:      703 LCs used as LUT4 and DFF
+Info: Packing non-LUT FFs..
+Info:       74 LCs used as DFF only
+Info: Packing carries..
+Info:      102 LCs used as CARRY only
+Info: Packing indirect carry+LUT pairs...
+Info:       40 LUTs merged into carry LCs
+Info: Packing RAMs..
+Info: Placing PLLs..
+Info: Packing special functions..
+Info: Packing PLLs..
+Info: Promoting globals..
+Info: promoting clk$SB_IO_IN (fanout 777)
+Info: Constraining chains...
+Info:       35 LCs used to legalise carry chains.
+Info: Checksum: 0x3af22b38
+
+Info: Device utilisation:
+Info: 	         ICESTORM_LC:    2370/   7680    30%
+Info: 	        ICESTORM_RAM:       0/     32     0%
+Info: 	               SB_IO:      68/    206    33%
+Info: 	               SB_GB:       1/      8    12%
+Info: 	        ICESTORM_PLL:       0/      2     0%
+Info: 	         SB_WARMBOOT:       0/      1     0%
+
+Info: Placed 0 cells based on constraints.
+Info: Creating initial analytic placement for 1055 cells, random placement wirelen = 61263.
+Info:     at initial placer iter 0, wirelen = 2871
+Info:     at initial placer iter 1, wirelen = 2285
+Info:     at initial placer iter 2, wirelen = 2169
+Info:     at initial placer iter 3, wirelen = 2094
+Info: Running main analytical placer, max placement attempts per cell = 743590.
+Info:     at iteration #1, type ALL: wirelen solved = 2112, spread = 18511, legal = 19181; time = 0.02s
+Info:     at iteration #2, type ALL: wirelen solved = 2850, spread = 15935, legal = 16671; time = 0.02s
+Info:     at iteration #3, type ALL: wirelen solved = 3170, spread = 13864, legal = 14990; time = 0.02s
+Info:     at iteration #4, type ALL: wirelen solved = 3166, spread = 12941, legal = 14125; time = 0.02s
+Info:     at iteration #5, type ALL: wirelen solved = 3382, spread = 12241, legal = 13223; time = 0.02s
+Info:     at iteration #6, type ALL: wirelen solved = 3356, spread = 12630, legal = 13549; time = 0.02s
+Info:     at iteration #7, type ALL: wirelen solved = 3548, spread = 12423, legal = 13570; time = 0.02s
+Info:     at iteration #8, type ALL: wirelen solved = 3683, spread = 12558, legal = 13753; time = 0.02s
+Info:     at iteration #9, type ALL: wirelen solved = 3694, spread = 12544, legal = 13351; time = 0.03s
+Info:     at iteration #10, type ALL: wirelen solved = 3575, spread = 13335, legal = 14357; time = 0.02s
+Info: HeAP Placer Time: 0.41s
+Info:   of which solving equations: 0.23s
+Info:   of which spreading cells: 0.02s
+Info:   of which strict legalisation: 0.02s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 334, wirelen = 13223
+Info:   at iteration #5: temp = 0.000000, timing cost = 392, wirelen = 9329
+Info:   at iteration #10: temp = 0.000000, timing cost = 288, wirelen = 8745
+Info:   at iteration #15: temp = 0.000000, timing cost = 381, wirelen = 8452
+Info:   at iteration #20: temp = 0.000000, timing cost = 330, wirelen = 8281
+Info:   at iteration #24: temp = 0.000000, timing cost = 346, wirelen = 8209 
+Info: SA placement time 2.51s
+
+Info: Max frequency for clock 'clk$SB_IO_IN_$glb_clk': 124.38 MHz (PASS at 100.00 MHz)
+
+Info: Max delay <async>                       -> posedge clk$SB_IO_IN_$glb_clk: 9.09 ns
+Info: Max delay posedge clk$SB_IO_IN_$glb_clk -> <async>                      : 3.71 ns
+
+Info: Slack histogram:
+Info:  legend: times are in ps
+Info:          * represents 4 endpoint(s)
+Info:          + represents [1,4) endpoint(s)
+Info: [  1960,   2292) |*+
+Info: [  2292,   2624) |*+
+Info: [  2624,   2956) |******+
+Info: [  2956,   3288) |**********+
+Info: [  3288,   3620) |**************+
+Info: [  3620,   3952) |**********************+
+Info: [  3952,   4284) |************************+
+Info: [  4284,   4616) |*************************+
+Info: [  4616,   4948) |*********************************+
+Info: [  4948,   5280) |********************************+
+Info: [  5280,   5612) |********************************+
+Info: [  5612,   5944) |**************************+
+Info: [  5944,   6276) |***************************+
+Info: [  6276,   6608) |************************+
+Info: [  6608,   6940) |******************+
+Info: [  6940,   7272) |*****************************+
+Info: [  7272,   7604) |************************************************************ 
+Info: [  7604,   7936) |*****************************************************+
+Info: [  7936,   8268) |******+
+Info: [  8268,   8600) |*****************+
+Info: Checksum: 0xc7e1cd57
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 7541 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:       1000 |      156        843 |  156   843 |      6723|       0.31       0.31|
+Info:       2000 |      435       1564 |  279   721 |      6105|       0.25       0.56|
+Info:       3000 |      717       2252 |  282   688 |      5469|       0.26       0.82|
+Info:       4000 |      906       2729 |  189   477 |      4715|       0.13       0.96|
+Info:       5000 |     1115       3331 |  209   602 |      3985|       0.12       1.08|
+Info:       6000 |     1372       3949 |  257   618 |      3350|       0.13       1.21|
+Info:       7000 |     1665       4481 |  293   532 |      2719|       0.12       1.33|
+Info:       8000 |     1916       5093 |  251   612 |      2029|       0.11       1.44|
+Info:       9000 |     2168       5766 |  252   673 |      1349|       0.10       1.54|
+Info:      10000 |     2282       6627 |  114   861 |       492|       0.10       1.64|
+Info:      10504 |     2294       7098 |   12   471 |         0|       0.15       1.79|
+Info: Routing complete.
+Info: Router1 time 1.79s
+Info: Checksum: 0x0b61de32
+
+Info: Critical path report for clock 'clk$SB_IO_IN_$glb_clk' (posedge -> posedge):
+Info:       type curr  total name
+Info:   clk-to-q  0.54  0.54 Source stage[11].xs_SB_DFF_Q_8_D_SB_LUT4_O_LC.O
+Info:    routing  1.64  2.18 Net x[11][11] (12,18) -> (15,13)
+Info:                          Sink y[12]_SB_DFF_Q_11_D_SB_LUT4_O_I2_SB_LUT4_O_LC.I3
+Info:                          Defined in:
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.31  2.50 Source y[12]_SB_DFF_Q_11_D_SB_LUT4_O_I2_SB_LUT4_O_LC.O
+Info:    routing  0.59  3.09 Net y[12]_SB_DFF_Q_11_D_SB_LUT4_O_I2[2] (15,13) -> (16,12)
+Info:                          Sink y[12]_SB_DFF_Q_11_D_SB_LUT4_O_LC.I2
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:53.49-53.58
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.23  3.32 Source y[12]_SB_DFF_Q_11_D_SB_LUT4_O_LC.COUT
+Info:    routing  0.00  3.32 Net y[12]_SB_DFF_Q_11_D_SB_LUT4_O_I2_SB_CARRY_I1_CO (16,12) -> (16,12)
+Info:                          Sink y[12]_SB_DFF_Q_11_D_SB_LUT4_O_I2_SB_CARRY_I1_CO_SB_CARRY_CI$CARRY.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:53.49-53.58
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.13  3.44 Source y[12]_SB_DFF_Q_11_D_SB_LUT4_O_I2_SB_CARRY_I1_CO_SB_CARRY_CI$CARRY.COUT
+Info:    routing  0.00  3.44 Net y[12]_SB_DFF_Q_11_D_SB_LUT4_O_I2_SB_CARRY_I1_CO_SB_CARRY_CI_CO (16,12) -> (16,12)
+Info:                          Sink y[12]_SB_DFF_Q_10_D_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:53.49-53.58
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.13  3.57 Source y[12]_SB_DFF_Q_10_D_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_LC.COUT
+Info:    routing  0.00  3.57 Net y[12]_SB_DFF_Q_11_D_SB_LUT4_O_I2_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO (16,12) -> (16,12)
+Info:                          Sink y[12]_SB_DFF_Q_10_D_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:53.49-53.58
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.13  3.70 Source y[12]_SB_DFF_Q_10_D_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_LC.COUT
+Info:    routing  0.00  3.70 Net y[12]_SB_DFF_Q_11_D_SB_LUT4_O_I2_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO (16,12) -> (16,12)
+Info:                          Sink y[12]_SB_DFF_Q_10_D_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:53.49-53.58
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.13  3.82 Source y[12]_SB_DFF_Q_10_D_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_LC.COUT
+Info:    routing  0.00  3.82 Net y[12]_SB_DFF_Q_11_D_SB_LUT4_O_I2_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO (16,12) -> (16,12)
+Info:                          Sink y[12]_SB_DFF_Q_10_D_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:53.49-53.58
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.13  3.95 Source y[12]_SB_DFF_Q_10_D_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_LC.COUT
+Info:    routing  0.00  3.95 Net y[12]_SB_DFF_Q_11_D_SB_LUT4_O_I2_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO (16,12) -> (16,12)
+Info:                          Sink y[12]_SB_DFF_Q_10_D_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:53.49-53.58
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.13  4.07 Source y[12]_SB_DFF_Q_10_D_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_LC.COUT
+Info:    routing  0.00  4.07 Net y[12]_SB_DFF_Q_11_D_SB_LUT4_O_I2_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO (16,12) -> (16,12)
+Info:                          Sink y[12]_SB_DFF_Q_10_D_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:53.49-53.58
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.13  4.20 Source y[12]_SB_DFF_Q_10_D_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_LC.COUT
+Info:    routing  0.20  4.40 Net y[12]_SB_DFF_Q_11_D_SB_LUT4_O_I2_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO (16,12) -> (16,13)
+Info:                          Sink y[12]_SB_DFF_Q_10_D_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:53.49-53.58
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.13  4.52 Source y[12]_SB_DFF_Q_10_D_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_LC.COUT
+Info:    routing  0.00  4.52 Net y[12]_SB_DFF_Q_11_D_SB_LUT4_O_I2_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO (16,13) -> (16,13)
+Info:                          Sink y[12]_SB_DFF_Q_10_D_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:53.49-53.58
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.13  4.65 Source y[12]_SB_DFF_Q_10_D_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_LC.COUT
+Info:    routing  0.00  4.65 Net stage[12].yneg_SB_DFF_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI (16,13) -> (16,13)
+Info:                          Sink stage[12].yneg_SB_DFF_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_LUT4_I3_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:53.49-53.58
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.13  4.78 Source stage[12].yneg_SB_DFF_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_LUT4_I3_LC.COUT
+Info:    routing  0.00  4.78 Net stage[12].yneg_SB_DFF_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI (16,13) -> (16,13)
+Info:                          Sink stage[12].yneg_SB_DFF_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_LUT4_I3_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:53.49-53.58
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.13  4.90 Source stage[12].yneg_SB_DFF_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_LUT4_I3_LC.COUT
+Info:    routing  0.00  4.90 Net stage[12].yneg_SB_DFF_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI (16,13) -> (16,13)
+Info:                          Sink stage[12].yneg_SB_DFF_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_LUT4_I3_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:53.49-53.58
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.13  5.03 Source stage[12].yneg_SB_DFF_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_LUT4_I3_LC.COUT
+Info:    routing  0.00  5.03 Net stage[12].yneg_SB_DFF_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI (16,13) -> (16,13)
+Info:                          Sink stage[12].yneg_SB_DFF_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_LUT4_I3_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:53.49-53.58
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.13  5.15 Source stage[12].yneg_SB_DFF_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_LUT4_I3_LC.COUT
+Info:    routing  0.00  5.15 Net stage[12].yneg_SB_DFF_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI (16,13) -> (16,13)
+Info:                          Sink stage[12].yneg_SB_DFF_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_LUT4_I3_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:53.49-53.58
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.13  5.28 Source stage[12].yneg_SB_DFF_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_LUT4_I3_LC.COUT
+Info:    routing  0.00  5.28 Net stage[12].yneg_SB_DFF_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI (16,13) -> (16,13)
+Info:                          Sink stage[12].yneg_SB_DFF_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_LUT4_I3_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:53.49-53.58
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.13  5.41 Source stage[12].yneg_SB_DFF_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_LUT4_I3_LC.COUT
+Info:    routing  0.46  5.86 Net stage[12].yneg_SB_DFF_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI (16,13) -> (16,14)
+Info:                          Sink stage[12].yneg_SB_DFF_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_LUT4_I3_LC.I3
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:53.49-53.58
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.31  6.18 Source stage[12].yneg_SB_DFF_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_LUT4_I3_LC.O
+Info:    routing  1.27  7.45 Net stage[12].yneg_SB_DFF_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_LUT4_I3_O[2] (16,14) -> (15,17)
+Info:                          Sink stage[12].ys_SB_DFF_Q_2_D_SB_LUT4_O_LC.I3
+Info:                          Defined in:
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      setup  0.34  7.78 Source stage[12].ys_SB_DFF_Q_2_D_SB_LUT4_O_LC.I3
+Info: 3.63 ns logic, 4.16 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> 'posedge clk$SB_IO_IN_$glb_clk':
+Info:       type curr  total name
+Info:     source  0.00  0.00 Source y_in[2]$sb_io.D_IN_0
+Info:    routing  1.60  1.60 Net y_in[2]$SB_IO_IN (9,0) -> (3,2)
+Info:                          Sink stage[0].ys_SB_DFF_Q_12_D_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_LUT4_O_LC.I3
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:14.31-14.35
+Info:      logic  0.31  1.92 Source stage[0].ys_SB_DFF_Q_12_D_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_LUT4_O_LC.O
+Info:    routing  0.59  2.51 Net stage[0].ys_SB_DFF_Q_12_D_SB_LUT4_O_I3_SB_LUT4_O_I2[2] (3,2) -> (4,2)
+Info:                          Sink stage[0].ys_SB_DFF_Q_12_D_SB_LUT4_O_I3_SB_LUT4_O_LC.I2
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:30.36-30.41
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.23  2.74 Source stage[0].ys_SB_DFF_Q_12_D_SB_LUT4_O_I3_SB_LUT4_O_LC.COUT
+Info:    routing  0.00  2.74 Net stage[0].ys_SB_DFF_Q_11_D_SB_LUT4_O_I3_SB_LUT4_O_I2[3] (4,2) -> (4,2)
+Info:                          Sink stage[0].ys_SB_DFF_Q_11_D_SB_LUT4_O_I3_SB_LUT4_O_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:30.36-30.41
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.13  2.86 Source stage[0].ys_SB_DFF_Q_11_D_SB_LUT4_O_I3_SB_LUT4_O_LC.COUT
+Info:    routing  0.00  2.86 Net stage[0].ys_SB_DFF_Q_10_D_SB_LUT4_O_I3_SB_LUT4_O_I2[3] (4,2) -> (4,2)
+Info:                          Sink stage[0].ys_SB_DFF_Q_10_D_SB_LUT4_O_I3_SB_LUT4_O_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:30.36-30.41
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.13  2.99 Source stage[0].ys_SB_DFF_Q_10_D_SB_LUT4_O_I3_SB_LUT4_O_LC.COUT
+Info:    routing  0.00  2.99 Net stage[0].ys_SB_DFF_Q_9_D_SB_LUT4_O_I3_SB_LUT4_O_I2[3] (4,2) -> (4,2)
+Info:                          Sink stage[0].ys_SB_DFF_Q_9_D_SB_LUT4_O_I3_SB_LUT4_O_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:30.36-30.41
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.13  3.12 Source stage[0].ys_SB_DFF_Q_9_D_SB_LUT4_O_I3_SB_LUT4_O_LC.COUT
+Info:    routing  0.00  3.12 Net stage[0].ys_SB_DFF_Q_8_D_SB_LUT4_O_I3_SB_LUT4_O_I2[3] (4,2) -> (4,2)
+Info:                          Sink stage[0].ys_SB_DFF_Q_8_D_SB_LUT4_O_I3_SB_LUT4_O_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:30.36-30.41
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.13  3.24 Source stage[0].ys_SB_DFF_Q_8_D_SB_LUT4_O_I3_SB_LUT4_O_LC.COUT
+Info:    routing  0.00  3.24 Net stage[0].ys_SB_DFF_Q_7_D_SB_LUT4_O_I3_SB_LUT4_O_I2[3] (4,2) -> (4,2)
+Info:                          Sink stage[0].ys_SB_DFF_Q_7_D_SB_LUT4_O_I3_SB_LUT4_O_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:30.36-30.41
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.13  3.37 Source stage[0].ys_SB_DFF_Q_7_D_SB_LUT4_O_I3_SB_LUT4_O_LC.COUT
+Info:    routing  0.20  3.56 Net stage[0].ys_SB_DFF_Q_6_D_SB_LUT4_O_I3_SB_LUT4_O_I2[3] (4,2) -> (4,3)
+Info:                          Sink stage[0].ys_SB_DFF_Q_6_D_SB_LUT4_O_I3_SB_LUT4_O_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:30.36-30.41
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.13  3.69 Source stage[0].ys_SB_DFF_Q_6_D_SB_LUT4_O_I3_SB_LUT4_O_LC.COUT
+Info:    routing  0.00  3.69 Net stage[0].ys_SB_DFF_Q_5_D_SB_LUT4_O_I3_SB_LUT4_O_I2[3] (4,3) -> (4,3)
+Info:                          Sink stage[0].ys_SB_DFF_Q_5_D_SB_LUT4_O_I3_SB_LUT4_O_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:30.36-30.41
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.13  3.82 Source stage[0].ys_SB_DFF_Q_5_D_SB_LUT4_O_I3_SB_LUT4_O_LC.COUT
+Info:    routing  0.00  3.82 Net stage[0].ys_SB_DFF_Q_4_D_SB_LUT4_O_I3_SB_LUT4_O_I2[3] (4,3) -> (4,3)
+Info:                          Sink stage[0].ys_SB_DFF_Q_4_D_SB_LUT4_O_I3_SB_LUT4_O_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:30.36-30.41
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.13  3.94 Source stage[0].ys_SB_DFF_Q_4_D_SB_LUT4_O_I3_SB_LUT4_O_LC.COUT
+Info:    routing  0.00  3.94 Net stage[0].ys_SB_DFF_Q_3_D_SB_LUT4_O_I3_SB_LUT4_O_I2[3] (4,3) -> (4,3)
+Info:                          Sink stage[0].ys_SB_DFF_Q_3_D_SB_LUT4_O_I3_SB_LUT4_O_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:30.36-30.41
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.13  4.07 Source stage[0].ys_SB_DFF_Q_3_D_SB_LUT4_O_I3_SB_LUT4_O_LC.COUT
+Info:    routing  0.00  4.07 Net stage[0].ys_SB_DFF_Q_2_D_SB_LUT4_O_I3_SB_LUT4_O_I2[3] (4,3) -> (4,3)
+Info:                          Sink stage[0].ys_SB_DFF_Q_2_D_SB_LUT4_O_I3_SB_LUT4_O_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:30.36-30.41
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.13  4.19 Source stage[0].ys_SB_DFF_Q_2_D_SB_LUT4_O_I3_SB_LUT4_O_LC.COUT
+Info:    routing  0.00  4.19 Net stage[0].ys_SB_DFF_Q_1_D_SB_LUT4_O_I3_SB_LUT4_O_I2[3] (4,3) -> (4,3)
+Info:                          Sink stage[0].ys_SB_DFF_Q_1_D_SB_LUT4_O_I3_SB_LUT4_O_LC.CIN
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:30.36-30.41
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.13  4.32 Source stage[0].ys_SB_DFF_Q_1_D_SB_LUT4_O_I3_SB_LUT4_O_LC.COUT
+Info:    routing  0.26  4.58 Net stage[0].ys_SB_DFF_Q_D_SB_LUT4_O_I3_SB_LUT4_O_I2[3] (4,3) -> (4,3)
+Info:                          Sink stage[0].ys_SB_DFF_Q_D_SB_LUT4_O_I3_SB_LUT4_O_LC.I3
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:30.36-30.41
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.31  4.89 Source stage[0].ys_SB_DFF_Q_D_SB_LUT4_O_I3_SB_LUT4_O_LC.O
+Info:    routing  0.96  5.85 Net stage[0].ys_SB_DFF_Q_D_SB_LUT4_O_I3[2] (4,3) -> (5,6)
+Info:                          Sink stage[0].ys_SB_DFF_Q_D_SB_LUT4_O_LC.I3
+Info:                          Defined in:
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.31  6.17 Source stage[0].ys_SB_DFF_Q_D_SB_LUT4_O_LC.O
+Info:    routing  0.59  6.76 Net stage[0].ys_SB_DFF_Q_D[1] (5,6) -> (6,6)
+Info:                          Sink stage[0].ys_SB_DFF_Q_D_SB_LUT4_I3_LC.I3
+Info:                          Defined in:
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.31  7.07 Source stage[0].ys_SB_DFF_Q_D_SB_LUT4_I3_LC.O
+Info:    routing  1.27  8.34 Net stage[0].ys_SB_DFF_Q_D_SB_LUT4_I3_O[2] (6,6) -> (9,5)
+Info:                          Sink stage[0].ys_SB_DFF_Q_D_SB_LUT4_I3_O_SB_LUT4_I3_LC.I3
+Info:                          Defined in:
+Info:                               C:\Users\chepp\oss-cad-suite\bin\../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      setup  0.34  8.68 Source stage[0].ys_SB_DFF_Q_D_SB_LUT4_I3_O_SB_LUT4_I3_LC.I3
+Info: 3.21 ns logic, 5.47 ns routing
+
+Info: Critical path report for cross-domain path 'posedge clk$SB_IO_IN_$glb_clk' -> '<async>':
+Info:       type curr  total name
+Info:   clk-to-q  0.54  0.54 Source mag_out_SB_DFF_Q_12_D_SB_LUT4_O_LC.O
+Info:    routing  3.11  3.65 Net mag_out[3]$SB_IO_OUT (17,19) -> (16,0)
+Info:                          Sink mag_out[3]$sb_io.D_OUT_0
+Info:                          Defined in:
+Info:                               rtl/cordic_vec.v:22.25-22.26
+Info: 0.54 ns logic, 3.11 ns routing
+
+Info: Max frequency for clock 'clk$SB_IO_IN_$glb_clk': 128.47 MHz (PASS at 100.00 MHz)
+
+Info: Max delay <async>                       -> posedge clk$SB_IO_IN_$glb_clk: 8.68 ns
+Info: Max delay posedge clk$SB_IO_IN_$glb_clk -> <async>                      : 3.65 ns
+
+Info: Slack histogram:
+Info:  legend: times are in ps
+Info:          * represents 5 endpoint(s)
+Info:          + represents [1,5) endpoint(s)
+Info: [  2216,   2533) |*+
+Info: [  2533,   2850) |****+
+Info: [  2850,   3167) |*****+
+Info: [  3167,   3484) |*************+
+Info: [  3484,   3801) |************+
+Info: [  3801,   4118) |*******************+
+Info: [  4118,   4435) |*******************+
+Info: [  4435,   4752) |************************+
+Info: [  4752,   5069) |****************************+
+Info: [  5069,   5386) |****************************** 
+Info: [  5386,   5703) |****************************+
+Info: [  5703,   6020) |************************+
+Info: [  6020,   6337) |***********************+
+Info: [  6337,   6654) |************************+
+Info: [  6654,   6971) |******************+
+Info: [  6971,   7288) |*****************+
+Info: [  7288,   7605) |***********************************+
+Info: [  7605,   7922) |************************************************************ 
+Info: [  7922,   8239) |********+
+Info: [  8239,   8556) |***************+
+1 warning, 0 errors
+
+Info: Program finished normally.

@@ -1,0 +1,3 @@
+Warning: Replacing memory \z with list of registers. See rtl/cordic_vec.v:40
+Warning: Replacing memory \y with list of registers. See rtl/cordic_vec.v:39
+Warning: Replacing memory \x with list of registers. See rtl/cordic_vec.v:38
