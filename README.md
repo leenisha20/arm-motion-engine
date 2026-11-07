@@ -21,7 +21,7 @@ Host cmd (UART) -> cmd parser -> quintic trajectory generator
 | Quadrature decoder, PWM (dead time), UART + parser | self-checking testbenches | see `tb/` |
 | Closed loop (trajectory + controller + plant) | simulation | see results below |
 
-Not done yet: two-joint top-level integration, two-arm coordination, hardware run on a real board.
+Not done yet: UART command path into the top level, two-arm coordination, hardware run on a real board.
 
 ## Results
 
@@ -64,6 +64,19 @@ Same quintic move, same plant, one controller sample every 32 clocks.
 - FO-PID is the verified hardware build (lambda=mu=0.6, M=16) with the original gains, not the best gains from the sweep, so it is not tuned.
 - This is therefore a tuned-PID vs untuned-FO-PID comparison. The fair best-vs-best result is the table above, from the Python model.
 <!-- HWLOOP_END -->
+
+<!-- ARM_START -->
+### Two-joint arm, end to end (RTL simulation)
+Target (x, y) -> inverse kinematics -> two joint axes (quintic trajectory + PID, each with its own simulated DC-motor plant) -> forward kinematics on the final joint angles.
+
+| Target (Q2.14) | Reached | Error | Final joints (Q3.13) |
+|---|---|---|---|
+| (6000, 3000) | (6000, 2999) | 0.11 mm on a 550 mm reach | -1552, 12038 |
+
+- One target tested so far. More targets and both elbow poses are not covered yet.
+- Both joints use the same step count, so they arrive together.
+- The PID in the axis module uses the original (untuned) gains.
+<!-- ARM_END -->
 
 ### Synthesis (Yosys, Xilinx 7-series mapping, estimates only)
 | Module | LUTs | FFs | DSP48 |
