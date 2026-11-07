@@ -1,0 +1,30 @@
+VCD info: dumpfile sim/tb_arm.vcd opened for output.
+WARNING: tb/tb_arm.v:62: $readmemh(tb/arm_targets.hex): Not enough words in the file for the requested range [0:255].
+Target (1039,1046): reached (1040,1046), error 0.110973 mm (reach 550 mm), joints -512 23490
+Target (-2560,-1254): reached (-2561,-1254), error 0.110973 mm (reach 550 mm), joints 21404 20670
+Target (1244,-4040): reached (1244,-4039), error 0.110973 mm (reach 550 mm), joints -17938 17866
+Target (31,-5603): reached (30,-5604), error 0.156940 mm (reach 550 mm), joints -19294 14828
+Target (1616,6790): reached (1616,6791), error 0.110973 mm (reach 550 mm), joints 5928 11274
+Target (4520,7028): reached (4519,7027), error 0.156940 mm (reach 550 mm), joints 5330 6314
+Target (-889,1177): reached (-888,1175), error 0.248143 mm (reach 550 mm), joints 11196 23490
+Target (-1974,-2057): reached (-1974,-2057), error 0.000000 mm (reach 550 mm), joints 24273 20670
+Target (3822,-1806): reached (3820,-1805), error 0.248143 mm (reach 550 mm), joints -11135 17866
+Target (-4963,-2601): reached (-4963,-2601), error 0.000000 mm (reach 550 mm), joints 23220 14828
+Target (-141,-6978): reached (-140,-6979), error 0.156940 mm (reach 550 mm), joints -18058 11274
+Target (8352,253): reached (8351,252), error 0.156940 mm (reach 550 mm), joints -2608 6314
+Target (-1319,-660): reached (-1319,-661), error 0.110973 mm (reach 550 mm), joints 22564 23490
+Target (-376,-2826): reached (-377,-2827), error 0.156940 mm (reach 550 mm), joints -22017 20670
+Target (2797,3169): reached (2798,3170), error 0.156940 mm (reach 550 mm), joints -574 17866
+Target (5423,1409): reached (5421,1410), error 0.248143 mm (reach 550 mm), joints -4388 14828
+Target (-70,-6979): reached (-71,-6980), error 0.156940 mm (reach 550 mm), joints -17976 11274
+Target (7314,4041): reached (7312,4042), error 0.248143 mm (reach 550 mm), joints 1280 6312
+Target (-263,1451): reached (-265,1452), error 0.248143 mm (reach 550 mm), joints 7366 23490
+Target (-2677,-980): reached (-2677,-980), error 0.000000 mm (reach 550 mm), joints 20546 20670
+Target (-667,4174): reached (-668,4175), error 0.156940 mm (reach 550 mm), joints 6648 17866
+Target (2439,5045): reached (2437,5044), error 0.248143 mm (reach 550 mm), joints 2712 14826
+Target (4320,-5482): reached (4321,-5481), error 0.156940 mm (reach 550 mm), joints -12426 11274
+Target (-3079,-7768): reached (-3080,-7769), error 0.156940 mm (reach 550 mm), joints -18816 6314
+Targets: 24, max error 0.248143 mm, RMS error 0.167994 mm
+Mismatches : 0
+RESULT: PASS
+tb/tb_arm.v:67: $finish called at 8556715000 (1ps)

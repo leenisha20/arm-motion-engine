@@ -28,7 +28,10 @@ module tb_arm;
     kin_fk fk (.clk(clk), .rst_n(rst_n), .valid_in(fk_go), .t1(pos1), .t2(pos2),
                .valid_out(fk_v), .x_out(fx), .y_out(fy));
 
-    integer errors = 0, t, ex, ey, k;
+    integer errors = 0, t, ex, ey, k, NT = 0, fd, rc, i;
+    integer maxe_i = 0;
+    real sum2 = 0.0, maxe = 0.0;
+    reg [31:0] tg [0:255];
     real err_mm;
     reg signed [15:0] tx [0:2], ty [0:2];
 
@@ -45,6 +48,8 @@ module tb_arm;
             err_mm = $sqrt(ex * ex + ey * ey * 1.0) / 16384.0 / 0.55 * 1000.0;
             $display("Target (%0d,%0d): reached (%0d,%0d), error %0f mm (reach 550 mm), joints %0d %0d",
                      x, y, fx, fy, err_mm, pos1, pos2);
+            if (err_mm > maxe) maxe = err_mm;
+            sum2 = sum2 + err_mm * err_mm;
             if (err_mm > 5.0) errors = errors + 1;
         end
     endtask
@@ -53,7 +58,10 @@ module tb_arm;
         $dumpfile("sim/tb_arm.vcd"); $dumpvars(0, tb_arm);
         repeat (4) @(posedge clk); #1 rst_n = 1;
         repeat (100) @(posedge clk);
-        run_target(16'sd6000, 16'sd3000);
+        fd = $fopen("tb/arm_count.txt", "r"); rc = $fscanf(fd, "%d", NT); $fclose(fd);
+        $readmemh("tb/arm_targets.hex", tg);
+        for (i = 0; i < NT; i = i + 1) run_target($signed(tg[i][31:16]), $signed(tg[i][15:0]));
+        $display("Targets: %0d, max error %0f mm, RMS error %0f mm", NT, maxe, $sqrt(sum2 / NT));
         $display("Mismatches : %0d", errors);
         if (errors == 0) $display("RESULT: PASS"); else $display("RESULT: FAIL");
         $finish;

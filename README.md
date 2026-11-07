@@ -73,10 +73,19 @@ Target (x, y) -> inverse kinematics -> two joint axes (quintic trajectory + PID,
 |---|---|---|---|
 | (6000, 3000) | (6000, 2999) | 0.11 mm on a 550 mm reach | -1552, 12038 |
 
-- One target tested so far. More targets and both elbow poses are not covered yet.
+- Single-target example; see the multi-target test below. Elbow-up is not covered.
 - Both joints use the same step count, so they arrive together.
 - The PID in the axis module uses the original (untuned) gains.
 <!-- ARM_END -->
+
+<!-- ARMMULTI_START -->
+### Two-joint arm, multi-target test (RTL simulation)
+24 targets spread across the reachable ring, run back to back (each move starts from the previous pose).
+
+- Max end-point error: **0.25 mm** on a 550 mm reach
+- RMS end-point error: **0.17 mm**
+- Elbow-down solution only. Both joints use the same step count. The PID in the axis module uses the original (untuned) gains.
+<!-- ARMMULTI_END -->
 
 ### Synthesis (Yosys, Xilinx 7-series mapping, estimates only)
 | Module | LUTs | FFs | DSP48 |
