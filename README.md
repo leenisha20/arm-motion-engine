@@ -49,6 +49,22 @@ Quintic tracking RMS error on the same simulated DC-motor plant:
 - The FO-PID grid searched a narrower gain range than the PID grid (limitation).
 - Sweeps: `results/pid_tuning_sweep.csv`, `results/fopid_sweep.csv`, `results/fopid_memory_sweep.csv`. Memory length M=16 matched M=256 within noise.
 
+<!-- HWLOOP_START -->
+### Hardware closed loop: tuned PID vs FO-PID (RTL simulation)
+Same quintic move, same plant, one controller sample every 32 clocks.
+
+| Move target | Controller | Max err (LSB) | RMS err (LSB) | Overshoot (LSB) | Final err (LSB) |
+|---|---|---|---|---|---|
+| 12288 | PID | 82 | 33.0 | 15 | 2 |
+| 12288 | FO-PID | 180 | 73.6 | 95 | 3 |
+| 0 | PID | 83 | 33.3 | 16 | 2 |
+| 0 | FO-PID | 171 | 72.3 | 104 | 3 |
+
+- PID uses the tuned gains from the sweep (Kp=16, Ki=0, Kd=2400).
+- FO-PID is the verified hardware build (lambda=mu=0.6, M=16) with the original gains, not the best gains from the sweep, so it is not tuned.
+- This is therefore a tuned-PID vs untuned-FO-PID comparison. The fair best-vs-best result is the table above, from the Python model.
+<!-- HWLOOP_END -->
+
 ### Synthesis (Yosys, Xilinx 7-series mapping, estimates only)
 | Module | LUTs | FFs | DSP48 |
 |---|---|---|---|
@@ -82,7 +98,7 @@ Measured on a small, slow FPGA family; other devices will differ.
 
 ![PID vs FO-PID (untuned PID baseline)](results/loop2_pid_vs_fopid.png)
 
-*The last figure uses the untuned PID. The fair best-vs-best comparison is the table above.*
+*The last figure uses the tuned PID against the hardware FO-PID build (original gains).*
 
 ## Reproduce
 Requires Icarus Verilog, Python 3 (numpy, matplotlib), Yosys.
@@ -103,4 +119,4 @@ Requires Icarus Verilog, Python 3 (numpy, matplotlib), Yosys.
 ## Limitations
 - Plant models are simulation-only; nothing has run on real hardware.
 - Closed-loop tests step the plant once per controller sample with one extra sample of delay versus the Python model.
-- The first closed-loop plots use the untuned PID.
+- The first closed-loop plot (`loop1`) uses the untuned PID; the PID vs FO-PID plot uses the tuned PID.

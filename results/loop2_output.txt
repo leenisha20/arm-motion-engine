@@ -1,0 +1,10 @@
+VCD info: dumpfile sim/tb_loop2.vcd opened for output.
+Move -> 12288 | PID   : max err 82 LSB, rms 32.994966, overshoot 15, final 2
+Move -> 12288 | FO-PID: max err 180 LSB, rms 73.648023, overshoot 95, final 3
+Move -> 0 | PID   : max err 83 LSB, rms 33.330729, overshoot 16, final 2
+Move -> 0 | FO-PID: max err 171 LSB, rms 72.286084, overshoot 104, final 3
+----------------------------------------
+Mismatches : 0
+RESULT: PASS
+tb/tb_loop2.v:120: $finish called at 389635000 (1ps)
+Plot saved -> results/loop2_pid_vs_fopid.png
