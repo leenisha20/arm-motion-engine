@@ -55,8 +55,8 @@ module tb_roundtrip;
 
     always @(posedge clk) begin
         if (v_fk && got < N) begin
-            ex = x_o - xd[LAT-2];
-            ey = y_o - yd[LAT-2];
+            ex = x_o - $signed(vec[got][63:48]);
+            ey = y_o - $signed(vec[got][47:32]);
             mag2 = ex*ex + ey*ey;
             if (mag2 > max2) max2 = mag2;
             sum2 = sum2 + mag2;
