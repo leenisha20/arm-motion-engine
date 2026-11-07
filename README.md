@@ -73,10 +73,16 @@ These are Yosys estimates, not Vivado results. `traj_gen` uses 40 DSPs because i
 Measured on a small, slow FPGA family; other devices will differ.
 
 ## Figures
-- `docs/cordic_waveform.png`: CORDIC sin/cos waveform
-- `results/cordic_error.png`: CORDIC error vs ideal
-- `results/loop1_tracking.png`: closed-loop tracking of a quintic move
-- `results/loop2_pid_vs_fopid.png`: PID vs FO-PID in the hardware loop (untuned PID; see the table above for the fair comparison)
+
+![CORDIC waveform](docs/cordic_waveform.png)
+
+![CORDIC error](results/cordic_error.png)
+
+![Closed-loop tracking](results/loop1_tracking.png)
+
+![PID vs FO-PID (untuned PID baseline)](results/loop2_pid_vs_fopid.png)
+
+*The last figure uses the untuned PID. The fair best-vs-best comparison is the table above.*
 
 ## Reproduce
 Requires Icarus Verilog, Python 3 (numpy, matplotlib), Yosys.
