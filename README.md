@@ -1,5 +1,7 @@
 # Verilog Motion Control Engine for Coordinated Robotic Arms
 
+![CI](https://github.com/leenisha20/arm-motion-engine/actions/workflows/ci.yml/badge.svg)
+
 A hardware motion-control pipeline written in Verilog: CORDIC trigonometry, 2-link inverse/forward kinematics, quintic trajectory generation, PID and fractional-order PID joint control, and motor peripherals. Every block is verified bit-for-bit against a Python golden model with a self-checking testbench (automatic PASS/FAIL).
 Host cmd (UART) -> cmd parser -> quintic trajectory generator
 -> CORDIC kinematics (IK/FK) -> joint controller (PID / FO-PID)
