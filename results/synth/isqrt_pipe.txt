@@ -1,0 +1,26 @@
+
+16. Printing statistics.
+
+=== isqrt_pipe ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     1520 wires
+     2829 wire bits
+       37 public wires
+      965 public wire bits
+        6 ports
+       50 port bits
+     1432 cells
+        1   BUFG
+       99   CARRY4
+      586   FDRE
+       33   IBUF
+      105   INV
+      210   LUT2
+      311   LUT3
+       28   LUT4
+       30   LUT5
+       12   LUT6
+       17   OBUF
+

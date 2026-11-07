@@ -1,0 +1,88 @@
+
+16. Printing statistics.
+
+=== $paramod\cordic_pipe\ITER=s32'00000000000000000000000000001110 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     2640 wires
+     4223 wire bits
+       86 public wires
+     1105 public wire bits
+        7 ports
+       52 port bits
+     1685 cells
+      209   CARRY4
+      585   FDRE
+      236   INV
+      229   LUT2
+      116   LUT3
+      302   LUT4
+        8   SRL16E
+
+=== kin_fk ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      969 wires
+     1459 wire bits
+       19 public wires
+      188 public wire bits
+        8 ports
+       68 port bits
+      436 cells
+        1   BUFG
+       51   CARRY4
+        2   DSP48E1
+       64   FDRE
+        2   FDSE
+       35   IBUF
+       64   INV
+       32   LUT2
+       39   LUT3
+       23   LUT4
+       82   LUT5
+        5   LUT6
+        1   MUXF7
+       33   OBUF
+        2   SRL16E
+        2 submodules
+        2   $paramod\cordic_pipe\ITER=s32'00000000000000000000000000001110
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+     3806 kin_fk
+     1685 $paramod\cordic_pipe\ITER=s32'00000000000000000000000000001110
+
+        +----------Count including submodules.
+        | 
+     6249 wires
+     9905 wire bits
+      191 public wires
+     2398 public wire bits
+       22 ports
+      172 port bits
+        - memories
+        - memory bits
+        - processes
+     3806 cells
+        1   BUFG
+      469   CARRY4
+        2   DSP48E1
+     1234   FDRE
+        2   FDSE
+       35   IBUF
+      536   INV
+      490   LUT2
+      271   LUT3
+      627   LUT4
+       82   LUT5
+        5   LUT6
+        1   MUXF7
+       33   OBUF
+       18   SRL16E
+        2 submodules
+        2   $paramod\cordic_pipe\ITER=s32'00000000000000000000000000001110
+

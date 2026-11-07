@@ -1,0 +1,28 @@
+
+16. Printing statistics.
+
+=== traj_gen ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     2786 wires
+     5487 wire bits
+       26 public wires
+      335 public wire bits
+       10 ports
+       58 port bits
+      883 cells
+        1   BUFG
+       95   CARRY4
+       40   DSP48E1
+      176   FDRE
+       39   IBUF
+        5   INV
+      368   LUT2
+       90   LUT3
+        9   LUT4
+       21   LUT5
+        3   LUT6
+       19   OBUF
+       17   SRL16E
+

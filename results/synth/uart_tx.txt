@@ -1,0 +1,27 @@
+
+16. Printing statistics.
+
+=== uart_tx ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       94 wires
+      170 wire bits
+       10 public wires
+       43 public wire bits
+        6 ports
+       13 port bits
+       84 cells
+        1   BUFG
+        5   CARRY4
+       29   FDRE
+        1   FDSE
+       11   IBUF
+        3   INV
+        1   LUT2
+        3   LUT3
+        2   LUT4
+       17   LUT5
+        9   LUT6
+        2   OBUF
+

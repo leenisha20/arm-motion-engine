@@ -1,0 +1,27 @@
+
+16. Printing statistics.
+
+=== cordic_vec ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     3712 wires
+     5961 wire bits
+       90 public wires
+     1362 public wire bits
+        8 ports
+       68 port bits
+     2406 cells
+        1   BUFG
+      289   CARRY4
+      743   FDRE
+       35   IBUF
+      370   INV
+      550   LUT2
+      234   LUT3
+      142   LUT4
+        1   LUT5
+        1   LUT6
+       33   OBUF
+        7   SRL16E
+

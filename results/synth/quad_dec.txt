@@ -1,0 +1,25 @@
+
+16. Printing statistics.
+
+=== quad_dec ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       84 wires
+      144 wire bits
+       10 public wires
+       28 public wire bits
+        7 ports
+       22 port bits
+       71 cells
+        1   BUFG
+        4   CARRY4
+       24   FDRE
+        4   IBUF
+        1   INV
+        6   LUT2
+        2   LUT4
+       10   LUT5
+        1   LUT6
+       18   OBUF
+

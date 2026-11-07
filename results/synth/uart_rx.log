@@ -1,0 +1,12 @@
+Warning: Replacing memory \z with list of registers. See rtl/cordic_pipe.v:30
+Warning: Replacing memory \y with list of registers. See rtl/cordic_pipe.v:29
+Warning: Replacing memory \x with list of registers. See rtl/cordic_pipe.v:28
+Warning: Replacing memory \z with list of registers. See rtl/cordic_vec.v:40
+Warning: Replacing memory \y with list of registers. See rtl/cordic_vec.v:39
+Warning: Replacing memory \x with list of registers. See rtl/cordic_vec.v:38
+Warning: Replacing memory \hist with list of registers. See rtl/fopid_ctrl.v:53
+Warning: Replacing memory \r with list of registers. See rtl/isqrt_pipe.v:23
+Warning: Replacing memory \n with list of registers. See rtl/isqrt_pipe.v:22
+Warning: Replacing memory \sg with list of registers. See rtl/kin_fk.v:59
+Warning: Replacing memory \atgd with list of registers. See rtl/kin_ik.v:104
+Warning: Replacing memory \c2d with list of registers. See rtl/kin_ik.v:70

@@ -1,0 +1,113 @@
+
+16. Printing statistics.
+
+=== $paramod$ee4d86eed7f8bf2d05a3117ae7817e614a83b6ff\cordic_vec ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     3677 wires
+     5926 wire bits
+       90 public wires
+     1362 public wire bits
+        8 ports
+       68 port bits
+     2337 cells
+      289   CARRY4
+      743   FDRE
+      370   INV
+      550   LUT2
+      234   LUT3
+      142   LUT4
+        1   LUT5
+        1   LUT6
+        7   SRL16E
+
+=== isqrt_pipe ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     1486 wires
+     2795 wire bits
+       37 public wires
+      965 public wire bits
+        6 ports
+       50 port bits
+     1381 cells
+       99   CARRY4
+      586   FDRE
+      105   INV
+      210   LUT2
+      311   LUT3
+       28   LUT4
+       30   LUT5
+       12   LUT6
+
+=== kin_ik ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     1199 wires
+     1890 wire bits
+       34 public wires
+      427 public wire bits
+        8 ports
+       68 port bits
+      479 cells
+        1   BUFG
+       42   CARRY4
+        7   DSP48E1
+      152   FDRE
+       14   FDSE
+       35   IBUF
+       50   INV
+       80   LUT2
+        3   LUT3
+        4   LUT4
+       23   LUT5
+        3   LUT6
+       33   OBUF
+       14   SRL16E
+       18   SRLC32E
+        4 submodules
+        3   $paramod$ee4d86eed7f8bf2d05a3117ae7817e614a83b6ff\cordic_vec
+        1   isqrt_pipe
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+     8871 kin_ik
+     2337 $paramod$ee4d86eed7f8bf2d05a3117ae7817e614a83b6ff\cordic_vec
+     1381 isqrt_pipe
+
+        +----------Count including submodules.
+        | 
+    13716 wires
+    22463 wire bits
+      341 public wires
+     5478 public wire bits
+       38 ports
+      322 port bits
+        - memories
+        - memory bits
+        - processes
+     8871 cells
+        1   BUFG
+     1008   CARRY4
+        7   DSP48E1
+     2967   FDRE
+       14   FDSE
+       35   IBUF
+     1265   INV
+     1940   LUT2
+     1016   LUT3
+      458   LUT4
+       56   LUT5
+       18   LUT6
+       33   OBUF
+       35   SRL16E
+       18   SRLC32E
+        4 submodules
+        3   $paramod$ee4d86eed7f8bf2d05a3117ae7817e614a83b6ff\cordic_vec
+        1   isqrt_pipe
+

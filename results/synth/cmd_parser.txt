@@ -1,0 +1,24 @@
+
+16. Printing statistics.
+
+=== cmd_parser ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       68 wires
+      178 wire bits
+       13 public wires
+       75 public wire bits
+        8 ports
+       37 port bits
+      138 cells
+        1   BUFG
+       64   FDRE
+       11   IBUF
+       10   LUT2
+        1   LUT3
+       16   LUT4
+        6   LUT5
+        3   LUT6
+       26   OBUF
+

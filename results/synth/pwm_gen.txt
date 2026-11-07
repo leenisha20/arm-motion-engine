@@ -1,0 +1,27 @@
+
+16. Printing statistics.
+
+=== pwm_gen ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      182 wires
+      330 wire bits
+       10 public wires
+      101 public wire bits
+        5 ports
+       20 port bits
+      117 cells
+        1   BUFG
+       15   CARRY4
+       27   FDRE
+        2   FDSE
+       18   IBUF
+        7   INV
+       18   LUT2
+        2   LUT3
+        9   LUT4
+       10   LUT5
+        6   LUT6
+        2   OBUF
+
