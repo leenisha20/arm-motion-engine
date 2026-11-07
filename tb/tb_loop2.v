@@ -38,7 +38,7 @@ module tb_loop2;
     reg  signed [15:0] posA = 0, posB = 0;
     wire               pvA, pvB, busyB;
     wire signed [15:0] uA, uB;
-    pid_ctrl   ca (.clk(clk), .rst_n(rst_n), .clear(first), .valid_in(tick),
+    pid_ctrl #(.USE_OVR(1), .KP_OVR(4096), .KI_OVR(0), .KD_OVR(614400)) ca (.clk(clk), .rst_n(rst_n), .clear(first), .valid_in(tick),
                    .r_in(ref_r), .p_in(posA), .valid_out(pvA), .u_out(uA));
     fopid_ctrl #(.M(16)) cb (.clk(clk), .rst_n(rst_n), .clear(first), .valid_in(tick),
                    .r_in(ref_r), .p_in(posB), .valid_out(pvB), .u_out(uB), .busy(busyB));

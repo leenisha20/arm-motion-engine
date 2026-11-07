@@ -2,7 +2,12 @@
 // Fixed-point positional PID with clamping anti-windup, bit-accurate with model/pid_model.py.
 // r_in, p_in: signed Q3.13.  u_out: signed 16-bit (+-32767).  Latency 1 clock, throughput 1/clk.
 // clear: treat this sample as the first of a new run (integrator and previous error = 0).
-module pid_ctrl (
+module pid_ctrl #(
+    parameter USE_OVR = 0,
+    parameter signed [63:0] KP_OVR = 0,
+    parameter signed [63:0] KI_OVR = 0,
+    parameter signed [63:0] KD_OVR = 0
+) (
     input  wire               clk,
     input  wire               rst_n,
     input  wire               clear,
@@ -13,6 +18,9 @@ module pid_ctrl (
     output reg  signed [15:0] u_out
 );
 `include "pid_params.vh"
+    localparam signed [63:0] KP_E = USE_OVR ? KP_OVR : KP_K;
+    localparam signed [63:0] KI_E = USE_OVR ? KI_OVR : KI_K;
+    localparam signed [63:0] KD_E = USE_OVR ? KD_OVR : KD_K;
 
     reg signed [31:0] integ;
     reg signed [31:0] e_prev;
@@ -32,7 +40,7 @@ module pid_ctrl (
     wire signed [63:0] e64 = e;
     wire signed [63:0] i64 = i_new;
     wire signed [63:0] d64 = d;
-    wire signed [63:0] acc = KP_K * e64 + KI_K * i64 + KD_K * d64;
+    wire signed [63:0] acc = KP_E * e64 + KI_E * i64 + KD_E * d64;
     wire signed [63:0] u64 = acc >>> 8;
 
     wire signed [63:0] umax = UMAX_K;
