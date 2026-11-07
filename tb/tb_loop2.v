@@ -15,8 +15,6 @@ module tb_loop2;
                  .log2n(log2n), .valid_out(tv), .last_out(tl), .q_out(tq), .busy(tbusy));
 
     reg signed [15:0] ref_r = 0;
-    always @(posedge clk) if (tv) ref_r <= tq;
-
     // sample tick
     reg [7:0] tc = 0;
     reg       tick = 0, first = 0;
@@ -26,6 +24,14 @@ module tb_loop2;
             if (tc == TICK - 1) begin tc <= 0; tick <= 1'b1; end
             else tc <= tc + 1;
         end
+    end
+
+    // store trajectory, replay one sample per controller tick
+    reg signed [15:0] rmem [0:2047];
+    integer wr = 0, rd = 0;
+    always @(posedge clk) begin
+        if (tv) begin rmem[wr] <= tq; wr <= wr + 1; end
+        if (tick && rd < wr) begin ref_r <= rmem[rd]; rd <= rd + 1; end
     end
 
     // controller A: PID
