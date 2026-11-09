@@ -15,4 +15,4 @@ jobs:
           sudo apt-get install -y iverilog
           pip install numpy matplotlib
       - name: Run all self-checking testbenches
-        run: ./scripts/run_all.sh
+        run: bash scripts/run_all.sh
