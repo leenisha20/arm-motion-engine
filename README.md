@@ -135,6 +135,12 @@ Measured on a small, slow FPGA family; other devices will differ.
 
 ## Figures
 
+### Two-arm demo (animated from the RTL simulation)
+
+![Two-arm demo](docs/arm_pair_demo.gif)
+
+Joint angles come from the simulated RTL (IK, trajectories, PID, plants). Arm B is drawn shifted right for display only.
+
 ![CORDIC waveform](docs/cordic_waveform.png)
 
 ![CORDIC error](results/cordic_error.png)

@@ -41,6 +41,17 @@ module tb_pair;
 
     integer errors = 0, t, ex, ey, lag;
     real ea, eb;
+    // log joint angles every 200 clocks for the animation
+    integer lc = 0, fdp;
+    initial begin
+        fdp = $fopen("results/pair_trace.csv", "w");
+        $fdisplay(fdp, "clk,p1a,p2a,p1b,p2b");
+    end
+    always @(posedge clk) begin
+        lc <= lc + 1;
+        if (rst_n && (lc % 200 == 0)) $fdisplay(fdp, "%0d,%0d,%0d,%0d,%0d", lc, p1a, p2a, p1b, p2b);
+    end
+
     initial begin
         $dumpfile("sim/tb_pair.vcd"); $dumpvars(0, tb_pair);
         repeat (4) @(posedge clk); #1 rst_n = 1;
@@ -63,6 +74,7 @@ module tb_pair;
         $display("Start lag B after A: %0d clocks (expected %0d)", lag, DELAY + 1);
         if (ea > 5.0 || eb > 5.0) errors = errors + 1;
         if (lag != DELAY + 1) errors = errors + 1;
+        $fclose(fdp);
         $display("Mismatches : %0d", errors);
         if (errors == 0) $display("RESULT: PASS"); else $display("RESULT: FAIL");
         $finish;
