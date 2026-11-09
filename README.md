@@ -8,6 +8,26 @@ Host cmd (UART) -> cmd parser -> quintic trajectory generator
 -> PWM -> motor plant model
 ^ quadrature encoder decoder (feedback)
 
+## Architecture
+
+```mermaid
+flowchart LR
+    H[Host UART] --> P[Frame parser]
+    P --> IK[IK: CORDIC atan2 + sqrt]
+    IK --> T1[Quintic trajectory J1]
+    IK --> T2[Quintic trajectory J2]
+    T1 --> C1[PID / FO-PID J1]
+    T2 --> C2[PID / FO-PID J2]
+    C1 --> M1[PWM + motor plant]
+    C2 --> M2[PWM + motor plant]
+    M1 --> E1[Encoder decoder]
+    M2 --> E2[Encoder decoder]
+    E1 --> C1
+    E2 --> C2
+```
+
+`arm_pair` instantiates two such arms; arm B receives arm A's target plus an offset after a programmable delay (leader-follower). Both arms were verified to reach their targets with the expected 501-clock start lag. This is a simplified model: independent base frames, no collision checking.
+
 ## Status
 
 | Block | Verified | Notes |
@@ -21,9 +41,10 @@ Host cmd (UART) -> cmd parser -> quintic trajectory generator
 | PID with anti-windup | bit-exact, 4556 samples | clamped integrator, saturated output |
 | Fractional-order PID (Grunwald-Letnikov, M=16) | bit-exact, 4556 samples | serial MAC, 18-clock latency |
 | Quadrature decoder, PWM (dead time), UART + parser | self-checking testbenches | see `tb/` |
+| Two-joint arm, UART path, two-arm leader-follower | self-checking testbenches, run in CI | see `tb/tb_arm*.v`, `tb/tb_pair.v` |
 | Closed loop (trajectory + controller + plant) | simulation | see results below |
 
-Not done yet: UART command path into the top level, two-arm coordination, hardware run on a real board.
+Not done yet: hardware run on a real board (no board available), collision checking between the two arms, elbow-up solutions.
 
 ## Results
 
@@ -140,7 +161,15 @@ Requires Icarus Verilog, Python 3 (numpy, matplotlib), Yosys.
 ## Layout
 `rtl/` Verilog, `tb/` testbenches and vectors, `model/` Python golden models, `scripts/` run scripts, `results/` tables, plots, synthesis reports, `docs/` figures.
 
+## What I learned
+- Writing a bit-accurate Python model first made every RTL bug visible as a mismatch on a specific vector.
+- Truncation error in short CORDIC vectors was fixed with guard bits; the sweep shows the point of diminishing returns (4 bits).
+- A first comparison of PID vs fractional-order PID looked favorable to FO-PID only because the PID was untuned. Retuning both fairly removed that advantage on this plant.
+- Several of my own testbench errors (delay alignment, tick rate vs trajectory rate) looked like RTL failures; comparing against stored expected values is more robust than counting latency.
+
 ## Limitations
 - Plant models are simulation-only; nothing has run on real hardware.
 - Closed-loop tests step the plant once per controller sample with one extra sample of delay versus the Python model.
 - The first closed-loop plot (`loop1`) uses the untuned PID; the PID vs FO-PID plot uses the tuned PID.
+- No board run; all results are RTL simulation. Synthesis numbers are Yosys estimates.
+- Hardware-loop PID RMS error (33 LSB) is higher than the Python model's best (9.6 LSB); cause not analyzed.
